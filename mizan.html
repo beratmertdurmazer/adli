@@ -207,20 +207,58 @@
             <div class="mt-12 bg-gray-50 dark:bg-dark border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow-xl" data-aos="fade-up">
                 <h4 class="text-gray-900 dark:text-white font-bold mb-6 border-b border-gray-200 dark:border-gray-800 pb-2"><i class="fa-solid fa-desktop text-gray-600 dark:text-gray-400 mr-2"></i>Örnek Sistem Çıktısı (Dashboard)</h4>
                 <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between mb-1"><span class="text-red font-bold">🚨 Cinayet Olasılığı</span> <span class="text-gray-900 dark:text-white">%78</span></div>
-                        <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-red h-2 rounded-full" style="width: 78%"></div></div>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 italic">Gerekçe: Toksikoloji raporundaki madde ile bilişim raporundaki arama geçmişi eşleşiyor.</p>
+                    <div class="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 p-3 rounded-lg transition-colors border border-transparent dark:hover:border-gray-700 group" onclick="toggleDemoDetails('demo-cinayet')">
+                        <div class="flex justify-between mb-1"><span class="text-red font-bold flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs transition-transform duration-300" id="icon-demo-cinayet"></i> 🚨 Cinayet Olasılığı</span> <span class="text-gray-900 dark:text-white font-bold">%78</span></div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2 mb-2"><div class="bg-red h-2 rounded-full" style="width: 78%"></div></div>
+                        <div id="demo-cinayet" class="hidden mt-3 p-4 bg-white dark:bg-card border border-red/20 rounded-lg shadow-inner">
+                            <h5 class="text-sm font-bold text-gray-900 dark:text-white mb-2 border-b border-gray-200 dark:border-gray-700 pb-1">Tespit Edilen Çelişkiler (Korelasyon Motoru)</h5>
+                            <ul class="text-xs space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-red mt-0.5"></i> <span><b>Toksikoloji Raporu:</b> Kanda yüksek dozda "Siyanoakrilat" türevi tespit edildi.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-red mt-0.5"></i> <span><b>Bilişim Raporu:</b> Olaydan 2 saat önce şüphelinin telefonunda "iz bırakmayan zehirler" araması yapılmış.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-red mt-0.5"></i> <span><b>Otopsi Raporu:</b> Boyun bölgesindeki ekimozlar (morarmalar) boğuşma izi ile uyumlu, düşme izi ile uyumsuz.</span></li>
+                            </ul>
+                            <div class="mt-3 text-xs bg-red/10 text-red p-2 rounded border border-red/20 italic">
+                                Sonuç: Farklı disiplinlerden gelen 3 rapor bağımsız olarak incelendiğinde görünmeyen bağ, KAYRA tarafından çapraz sorgu ile yakalandı.
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex justify-between mb-1"><span class="text-yellow-500 font-bold">⚠️ Kaza Olasılığı</span> <span class="text-gray-900 dark:text-white">%15</span></div>
+                    <div class="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 p-3 rounded-lg transition-colors border border-transparent dark:hover:border-gray-700 group" onclick="toggleDemoDetails('demo-kaza')">
+                        <div class="flex justify-between mb-1"><span class="text-yellow-500 font-bold flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs transition-transform duration-300" id="icon-demo-kaza"></i> ⚠️ Kaza Olasılığı</span> <span class="text-gray-900 dark:text-white font-bold">%15</span></div>
                         <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-yellow-500 h-2 rounded-full" style="width: 15%"></div></div>
+                        <div id="demo-kaza" class="hidden mt-3 p-4 bg-white dark:bg-card border border-yellow-500/20 rounded-lg shadow-inner">
+                            <h5 class="text-sm font-bold text-gray-900 dark:text-white mb-2 border-b border-gray-200 dark:border-gray-700 pb-1">Zayıf İhtimaller ve Eksik Bulgular</h5>
+                            <ul class="text-xs space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex gap-2"><i class="fa-solid fa-circle-minus text-yellow-500 mt-0.5"></i> <span><b>Mekan İncelemesi:</b> Olay yerindeki kimyasal maddelerin kaza sonucu dökülmüş olma ihtimali %15 olarak hesaplandı.</span></li>
+                                <li class="flex gap-2"><i class="fa-solid fa-circle-minus text-yellow-500 mt-0.5"></i> <span><b>Biyolojik İz:</b> Maktulün tırnak aralarındaki DNA bulguları kaza senaryosuyla açıklanamamaktadır.</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex justify-between mb-1"><span class="text-gray-600 dark:text-gray-400 font-bold">📉 İntihar Olasılığı</span> <span class="text-gray-900 dark:text-white">%7</span></div>
+                    <div class="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 p-3 rounded-lg transition-colors border border-transparent dark:hover:border-gray-700 group" onclick="toggleDemoDetails('demo-intihar')">
+                        <div class="flex justify-between mb-1"><span class="text-gray-600 dark:text-gray-400 font-bold flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs transition-transform duration-300" id="icon-demo-intihar"></i> 📉 İntihar Olasılığı</span> <span class="text-gray-900 dark:text-white font-bold">%7</span></div>
                         <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-gray-600 h-2 rounded-full" style="width: 7%"></div></div>
+                        <div id="demo-intihar" class="hidden mt-3 p-4 bg-white dark:bg-card border border-gray-500/20 rounded-lg shadow-inner">
+                            <h5 class="text-sm font-bold text-gray-900 dark:text-white mb-2 border-b border-gray-200 dark:border-gray-700 pb-1">Elenen Senaryo Gerekçesi</h5>
+                            <ul class="text-xs space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex gap-2"><i class="fa-solid fa-xmark text-gray-500 mt-0.5"></i> <span><b>Fiziksel İmkansızlık:</b> Yaranın açısı ve derinliği (Balistik/Morg Raporu), kişinin kendi kendine zarar verebileceği anatomik sınırların dışındadır.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <script>
+                    function toggleDemoDetails(id) {
+                        const content = document.getElementById(id);
+                        const icon = document.getElementById('icon-' + id);
+
+                        if (content.classList.contains('hidden')) {
+                            content.classList.remove('hidden');
+                            icon.style.transform = 'rotate(90deg)';
+                        } else {
+                            content.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                </script>
             </div>
         </div>
     </section>
@@ -385,17 +423,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:bg-gray-100 dark:bg-dark/50">
+                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800">
                                     <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">1. Donanım Altyapısı</td>
                                     <td class="px-6 py-4">Yerel GPU (Örn: RTX 4090x4, Ada 6000x2 vb. muadiller) ve Sunucu Seti</td>
                                     <td class="px-6 py-4 text-right">1.002.760 TL</td>
                                 </tr>
-                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:bg-gray-100 dark:bg-dark/50">
+                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800">
                                     <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">2. Personel Giderleri</td>
                                     <td class="px-6 py-4">4 Kişilik Kıdemli Ekip (6 Ay Toplam)</td>
                                     <td class="px-6 py-4 text-right">6.900.000 TL</td>
                                 </tr>
-                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:bg-gray-100 dark:bg-dark/50">
+                                <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800">
                                     <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">3. Danışmanlık ve Test</td>
                                     <td class="px-6 py-4">Adli Tıp Profesör Desteği + Siber Sızma Testi</td>
                                     <td class="px-6 py-4 text-right">1.500.000 TL</td>
@@ -424,19 +462,19 @@
         <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">7. Kurumsal Sunum Manifestosu</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <div class="bg-gray-50 dark:bg-gray-100 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
+                <div class="bg-gray-50 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
                     <h4 class="text-cyan font-bold mb-2"><i class="fa-solid fa-eye mr-2"></i>Mutlak Şeffaflık</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Kara kutu değil. Her olasılığın yanında raporlardaki somut cümleleri "gerekçe" olarak ekler.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-100 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
+                <div class="bg-gray-50 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
                     <h4 class="text-green-500 font-bold mb-2"><i class="fa-solid fa-piggy-bank mr-2"></i>Maliyet Etkinliği</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-400">63 Milyon TL yerine, sadece ~10 Milyon TL bütçeyle en büyük problem olan "çapraz rapor korelasyonunu" çözer.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-100 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
+                <div class="bg-gray-50 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
                     <h4 class="text-accent font-bold mb-2"><i class="fa-solid fa-lock mr-2"></i>Hukuki Güvence</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-400">İnternete kapalıdır. Hiçbir veri dışarı sızamaz. KVKK ihlali riski sıfırdır.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-100 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
+                <div class="bg-gray-50 dark:bg-dark/50 border border-gray-300 dark:border-gray-700 p-6 rounded-xl">
                     <h4 class="text-orange-500 font-bold mb-2"><i class="fa-solid fa-bolt mr-2"></i>Hız ve Odak</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-400">İnsan gözünün günlerce incelediği satır arası çelişkileri saniyeler içinde yakalar, gözden hiçbir şey kaçmaz.</p>
                 </div>
