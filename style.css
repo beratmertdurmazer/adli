@@ -1,0 +1,44 @@
+/* Custom overrides or extra styles can go here. 
+   Most styling is handled by Tailwind CSS in index.html */
+
+   html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for a more app-like feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0f18; /* text-dark */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2937; /* gray-800 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6; /* text-accent */
+}
+
+/* Glowing text effect utility */
+.glow-text {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Soft highlight for cards */
+.card-hover-effect {
+    transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+}

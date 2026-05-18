@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAYRA - Korelasyon ve Adli Yapay Zeka Risk Analizi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config for Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0f18',
+                        card: '#131b2f',
+                        accent: '#3b82f6',
+                        accentHover: '#2563eb',
+                        cyan: '#06b6d4',
+                        teal: '#14b8a6',
+                        red: '#ef4444'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-cyan flex items-center justify-center shadow-lg shadow-accent/20">
+                        <i class="fa-solid fa-fingerprint text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white tracking-wider">KAYRA<span class="text-accent">.</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Ana Sayfa</a>
+                        <a href="#architecture" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Mimari</a>
+                        <a href="#timeline" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Takvim</a>
+                        <a href="#team" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Ekip</a>
+                        <a href="#budget" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Bütçe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark/95 to-dark"></div>
+            <!-- Grid pattern -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-accent opacity-20 blur-[100px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-gray-800 text-cyan mb-8" data-aos="fade-down">
+                <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>
+                <span class="text-sm font-medium tracking-wide">Adli Tıp Kurumu Proje Sunumu</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8" data-aos="zoom-in" data-aos-delay="100">
+                KAYRA <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan text-4xl md:text-5xl block mt-4">
+                    Korelasyon ve Adli Yapay Zeka Risk Analizi
+                </span>
+            </h1>
+            
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-400 mb-12" data-aos="fade-up" data-aos-delay="200">
+                Adli verileri ortak bir dile çeviren, dikey uzman yapay zeka motorlarıyla analiz eden ve yargıya bilimsel olasılıklar sunan, siber güvenlik ve KVKK uyumlu %100 On-Premise sistem mimarisi.
+            </p>
+            
+            <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#architecture" class="px-8 py-4 bg-accent hover:bg-accentHover text-white rounded-lg font-semibold transition-all shadow-lg shadow-accent/30 flex items-center gap-2">
+                    Mimariyi İncele <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="#budget" class="px-8 py-4 bg-card border border-gray-700 hover:border-gray-500 text-white rounded-lg font-semibold transition-all flex items-center gap-2">
+                    Maliyet Analizi <i class="fa-solid fa-chart-pie"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Detaylı Proje Bileşenleri</h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Sistemin teknik, idari ve operasyonel açıdan hiçbir açık vermemesi için tasarlanan 8 katmanlı mimari yapı.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 1 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-accent/50 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-accent transition-colors">
+                        <i class="fa-solid fa-layer-group text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">1. Veri Girişi & Çoklu Modül Katmanı</h3>
+                    <p class="text-gray-400 text-sm mb-4">Heterojen ve yapılandırılmamış adli verileri yapay zekanın anlayabileceği ortak bir dile çevirir.</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-check text-cyan mr-2"></i><b>KAYRA-NLP:</b> Tutanak/rapor OCR ve dilbilimsel analiz.</li>
+                        <li><i class="fa-solid fa-check text-cyan mr-2"></i><b>KAYRA-Vision:</b> Otopsi, radyolojik (BT/MR) ve balistik görsel analiz.</li>
+                        <li><i class="fa-solid fa-check text-cyan mr-2"></i><b>KAYRA-Tabular:</b> Toksikoloji verisi (LC-MS/MS) ve DNA ayrıştırma.</li>
+                        <li><i class="fa-solid fa-check text-cyan mr-2"></i><b>KAYRA-Media:</b> HTS kayıtları, ses ve arka plan gürültü analizi.</li>
+                    </ul>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-teal/50 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-teal transition-colors">
+                        <i class="fa-solid fa-microchip text-2xl text-teal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">2. Dikey Uzman Yapay Zeka Motorları</h3>
+                    <p class="text-gray-400 text-sm mb-4">Adli Tıp Kurumu'nun mevzuattaki dikey uzmanlık alanları için eğitilmiş lokal SLM'ler.</p>
+                    <ul class="space-y-2 text-sm text-gray-300 grid grid-cols-1 sm:grid-cols-2 gap-x-2">
+                        <li><i class="fa-solid fa-dna text-teal mr-2"></i>Morg ve Patoloji</li>
+                        <li><i class="fa-solid fa-flask text-teal mr-2"></i>Kimya ve Toksikoloji</li>
+                        <li><i class="fa-solid fa-disease text-teal mr-2"></i>Biyoloji Motoru</li>
+                        <li><i class="fa-solid fa-gun text-teal mr-2"></i>Fizik ve Balistik</li>
+                        <li><i class="fa-solid fa-brain text-teal mr-2"></i>Gözlem/Psikiyatri</li>
+                        <li><i class="fa-solid fa-laptop-code text-teal mr-2"></i>Adli Bilişim</li>
+                        <li><i class="fa-solid fa-car-burst text-teal mr-2"></i>Trafik Motoru</li>
+                    </ul>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-purple-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-purple-500 transition-colors">
+                        <i class="fa-solid fa-network-wired text-2xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">3. Çapraz Korelasyon ve Bilgi Grafiği</h3>
+                    <p class="text-gray-400 text-sm mb-4">Sistemin "Üst Akıl" bileşeni; dairelerin ürettiği verileri birleştirir.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-circle-nodes text-purple-500 mr-2"></i><b>Adli Bilgi Grafiği:</b> Veriler arası anlamsal (semantic) dinamik ağ haritası.</li>
+                        <li><i class="fa-solid fa-triangle-exclamation text-red mr-2"></i><b>Çelişki Dedektörü:</b> Daireler arası çelişen verilere kırmızı bayrak (Red Flag) koyar.</li>
+                        <li><i class="fa-solid fa-book-open text-purple-500 mr-2"></i><b>Emsal Vaka RAG:</b> Geçmiş kararları tarayıp benzer kararları bulur.</li>
+                    </ul>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-orange-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-orange-500 transition-colors">
+                        <i class="fa-solid fa-chart-line text-2xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">4. İstatistiksel Çıkarım & Risk Motoru</h3>
+                    <p class="text-gray-400 text-sm mb-4">Yargıya kesin kararlar yerine bilimsel olasılıklar sunarak takdir yetkisini destekler.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-scale-balanced text-orange-500 mr-2"></i><b>Senaryo Analizörü:</b> Cinayet, İntihar, Kaza olasılıklarını hesaplar.</li>
+                        <li><i class="fa-solid fa-percent text-orange-500 mr-2"></i><b>Güven Skoru:</b> Yapay zekanın sonuca ne kadar güvendiğini gösteren metrik.</li>
+                        <li><i class="fa-solid fa-eye-low-vision text-orange-500 mr-2"></i><b>Kör Nokta Uyarıcısı:</b> İnceleme sürecinde gözden kaçan unsurları listeler.</li>
+                    </ul>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-green-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-green-500 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-2xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">5. Güvenlik ve On-Premise Altyapı</h3>
+                    <p class="text-gray-400 text-sm mb-4">İdari ve teknik siber güvenlik omurgası, devlet kurumu standartlarında.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-server text-green-500 mr-2"></i><b>Air-Gapped:</b> İnternete tamamen kapalı lokal sunucu mimarisi.</li>
+                        <li><i class="fa-solid fa-user-secret text-green-500 mr-2"></i><b>KVKK Maskeleme:</b> Kişisel verileri anonimleştirir, Vaka ID üzerinden çalışır.</li>
+                        <li><i class="fa-solid fa-key text-green-500 mr-2"></i><b>RBAC:</b> Rol tabanlı sıkı yetkilendirme sistemi.</li>
+                    </ul>
+                </div>
+
+                <!-- 6 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-indigo-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-magnifying-glass-chart text-2xl text-indigo-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">6. XAI ve Denetlenebilirlik Katmanı</h3>
+                    <p class="text-gray-400 text-sm mb-4">Kara kutu modeli reddedilir, sistemin şeffaf hesap verebilirliği sağlanır.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-book-medical text-indigo-500 mr-2"></i><b>Literatür Atıf Motoru:</b> Çıkarımları tıp literatürü ve Yargıtay içtihatlarına dayandırır.</li>
+                        <li><i class="fa-solid fa-file-signature text-indigo-500 mr-2"></i><b>Değiştirilemez Loglama:</b> Veri okuma ve işlem adımlarının milisaniyelik, adli izlenebilirliği (Audit Trail).</li>
+                    </ul>
+                </div>
+                
+                <!-- 7 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-pink-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-pink-500 transition-colors">
+                        <i class="fa-solid fa-desktop text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">7. UI ve Görselleştirme Paketi</h3>
+                    <p class="text-gray-400 text-sm mb-4">Uzmanların sistemi verimli kullanabilmesi için modern panel bileşenleri.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-cube text-pink-500 mr-2"></i><b>3D Lezyon Haritalama:</b> Yara izlerinin interaktif 3D insan modeli üzerinde gösterimi.</li>
+                        <li><i class="fa-solid fa-clock-rotate-left text-pink-500 mr-2"></i><b>İnteraktif Kronoloji:</b> Bulguların zaman çizgisi üzerinde simüle edilmesi.</li>
+                        <li><i class="fa-solid fa-wand-magic-sparkles text-pink-500 mr-2"></i><b>Rapor Sihirbazı:</b> Resmi formata uygun otomatik taslak oluşturma.</li>
+                    </ul>
+                </div>
+
+                <!-- 8 -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 hover:border-yellow-500/50 transition-colors group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:border-yellow-500 transition-colors">
+                        <i class="fa-solid fa-memory text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">8. Sistem Gereksinimleri</h3>
+                    <p class="text-gray-400 text-sm mb-4">Güçlü donanım ve lokal altyapı ihtiyaçları.</p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><i class="fa-solid fa-microchip text-yellow-500 mr-2"></i><b>GPU Cluster:</b> Yüksek VRAM (Örn: H100 NVL/A100) On-Premise sunucu kümesi.</li>
+                        <li><i class="fa-solid fa-code-branch text-yellow-500 mr-2"></i><b>Lokalize Modeller:</b> Llama-3-70B, Mixtral-8x22B, Qwen2-VL entegrasyonu.</li>
+                        <li><i class="fa-solid fa-database text-yellow-500 mr-2"></i><b>Vektör Veritabanı:</b> Milisaniyelik semantik arama için Milvus veya Qdrant.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-accent/10 border border-accent/30 rounded-xl p-6 text-center" data-aos="fade-up">
+                <p class="text-accent text-sm md:text-base font-medium">
+                    <i class="fa-solid fa-lightbulb text-yellow-400 mr-2"></i>
+                    Bu yapısal kurgu, hem uzmanların iş yükünü azaltır hem de Bilgi İşlem Daire Başkanlığı'nın siber güvenlik/KVKK çekincelerini (Air-Gapped/On-Premise) doğrudan ortadan kaldırır.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 relative bg-card/50 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Proje Takvimi (14 Ay)</h2>
+                <div class="w-20 h-1 bg-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-700 transform md:-translate-x-1/2"></div>
+
+                <!-- Phase 1 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12" data-aos="fade-up">
+                    <div class="flex-1 w-full md:text-right md:pr-12 pl-12 md:pl-0">
+                        <h4 class="text-xl font-bold text-cyan mb-2">Faz 1: Altyapı ve Model Seçimi</h4>
+                        <p class="text-gray-400 text-sm">Veri maskeleme mimarisinin kurulması, ATK sunucu odasının hazırlanması, LLM/VLM modellerinin lokal sunuculara indirilmesi.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark border-4 border-cyan transform md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.5)] z-10"></div>
+                    <div class="flex-1 w-full pl-12 md:pl-12 mt-2 md:mt-0">
+                        <span class="inline-block px-4 py-1 rounded-full bg-cyan/10 text-cyan border border-cyan/20 text-sm font-semibold">Ay 1 - 2</span>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12" data-aos="fade-up">
+                    <div class="flex-1 w-full md:text-right md:pr-12 pl-12 md:pl-0 md:order-1 order-2 mt-2 md:mt-0">
+                        <span class="inline-block px-4 py-1 rounded-full bg-accent/10 text-accent border border-accent/20 text-sm font-semibold">Ay 3 - 6</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark border-4 border-accent transform md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)] z-10"></div>
+                    <div class="flex-1 w-full pl-12 md:pl-12 md:order-2 order-1">
+                        <h4 class="text-xl font-bold text-accent mb-2">Faz 2: Dikey Uzman Motorlar</h4>
+                        <p class="text-gray-400 text-sm">Morg, Kimya, Biyoloji ve Balistik ihtisas dairelerine özel verilerin lokal ajanlarca işlenmeye başlanması.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12" data-aos="fade-up">
+                    <div class="flex-1 w-full md:text-right md:pr-12 pl-12 md:pl-0">
+                        <h4 class="text-xl font-bold text-purple-400 mb-2">Faz 3: Çapraz Korelasyon (Knowledge Graph)</h4>
+                        <p class="text-gray-400 text-sm">Projenin beyni olan Bilişsel Çekirdek mimarisinin kurulması, çelişki/bağlantı algoritmasının devreye alınması.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark border-4 border-purple-400 transform md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(192,132,252,0.5)] z-10"></div>
+                    <div class="flex-1 w-full pl-12 md:pl-12 mt-2 md:mt-0">
+                        <span class="inline-block px-4 py-1 rounded-full bg-purple-400/10 text-purple-400 border border-purple-400/20 text-sm font-semibold">Ay 7 - 9</span>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12" data-aos="fade-up">
+                    <div class="flex-1 w-full md:text-right md:pr-12 pl-12 md:pl-0 md:order-1 order-2 mt-2 md:mt-0">
+                        <span class="inline-block px-4 py-1 rounded-full bg-orange-400/10 text-orange-400 border border-orange-400/20 text-sm font-semibold">Ay 10 - 11</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark border-4 border-orange-400 transform md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(251,146,60,0.5)] z-10"></div>
+                    <div class="flex-1 w-full pl-12 md:pl-12 md:order-2 order-1">
+                        <h4 class="text-xl font-bold text-orange-400 mb-2">Faz 4: Güvenlik Sıkılaştırma</h4>
+                        <p class="text-gray-400 text-sm">Sistemin internete kapatılması (Air-Gapped testleri), penetrasyon testleri ve XAI entegrasyonu.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up">
+                    <div class="flex-1 w-full md:text-right md:pr-12 pl-12 md:pl-0">
+                        <h4 class="text-xl font-bold text-green-400 mb-2">Faz 5: Pilot Uygulama ve Teslim</h4>
+                        <p class="text-gray-400 text-sm">Gerçek vakaların (anonim) sisteme yüklenmesi, uzman denetiminde kalibrasyon ve kabul testleri.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark border-4 border-green-400 transform md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(74,222,128,0.5)] z-10"></div>
+                    <div class="flex-1 w-full pl-12 md:pl-12 mt-2 md:mt-0">
+                        <span class="inline-block px-4 py-1 rounded-full bg-green-400/10 text-green-400 border border-green-400/20 text-sm font-semibold">Ay 12 - 14</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Proje Ekip Yapılanması</h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">10 kişilik kıdemli ve uzman çekirdek kadro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Roles -->
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">Proje Müdürü (PM)</h4>
+                    <p class="text-xs text-gray-400">Kurum içi bürokrasi, dikey ekiplerin koordinasyonu.</p>
+                </div>
+                
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">Kıdemli AI Mimarı</h4>
+                    <p class="text-xs text-gray-400">Sistem mimarisi, lokal model optimizasyonu.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">2x</div>
+                    <h4 class="font-bold text-white mb-2">Kıdemli NLP Geliştirici</h4>
+                    <p class="text-xs text-gray-400">İfade tutanakları, tıbbi literatür analizi.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">Bilgisayarlı Görü Uzmanı</h4>
+                    <p class="text-xs text-gray-400">Otopsi fotoğrafları, röntgen/BT grafik işleme.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">Veri/Grafik DB Mühendisi</h4>
+                    <p class="text-xs text-gray-400">Knowledge Graph tasarımı ve Vektör DB yönetimi.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">2x</div>
+                    <h4 class="font-bold text-white mb-2">DevOps / MLOps</h4>
+                    <p class="text-xs text-gray-400">Donanım optimizasyonu, lokal cluster yönetimi.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">UI/UX & Frontend</h4>
+                    <p class="text-xs text-gray-400">3D insan modeli, zaman tüneli arayüz kodlama.</p>
+                </div>
+
+                <div class="bg-card border border-gray-800 rounded-xl p-6 text-center hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-12 h-12 bg-dark rounded-full mx-auto flex items-center justify-center mb-4 text-accent border border-gray-700">1x</div>
+                    <h4 class="font-bold text-white mb-2">Siber Güvenlik Uzmanı</h4>
+                    <p class="text-xs text-gray-400">KVKK uyumu, veri maskeleme, şifreleme protokolleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section id="budget" class="py-20 relative bg-card/30 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block px-3 py-1 rounded-full bg-red/10 text-red text-sm mb-4 border border-red/20 font-medium">Mayıs 2026 Verileri Baz Alınmıştır (1 USD = 45,58 TL)</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Maliyet ve Bütçe Analizi</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Data Tables -->
+                <div data-aos="fade-right">
+                    
+                    <div class="bg-card border border-gray-800 rounded-xl overflow-hidden mb-8">
+                        <div class="px-6 py-4 border-b border-gray-800 bg-dark/50">
+                            <h3 class="font-bold text-white"><i class="fa-solid fa-users text-accent mr-2"></i>Personel Giderleri (14 Ay)</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">10 Kişilik Uzman Kadro Toplamı</span>
+                                <span class="font-bold text-white">36.820.000 TL</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-1.5">
+                                <div class="bg-accent h-1.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card border border-gray-800 rounded-xl overflow-hidden mb-8">
+                        <div class="px-6 py-4 border-b border-gray-800 bg-dark/50">
+                            <h3 class="font-bold text-white"><i class="fa-solid fa-server text-green-500 mr-2"></i>Donanım ve Altyapı (Tek Seferlik)</h3>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-gray-400 text-sm">AI Sunucusu (8x H100 GPU)</span>
+                                    <span class="text-white text-sm">~320.000 USD</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-gray-400 text-sm">Yüksek Hızlı Depolama (SAN)</span>
+                                    <span class="text-white text-sm">~45.000 USD</span>
+                                </div>
+                            </div>
+                            <div class="pt-2 border-t border-gray-800 flex justify-between items-center">
+                                <span class="font-medium text-gray-300">Donanım Toplamı</span>
+                                <span class="font-bold text-white">17.320.400 TL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-800 bg-dark/50 flex justify-between items-center">
+                            <h3 class="font-bold text-white">Genel Proje Bütçesi</h3>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-md text-sm font-bold border border-green-500/30">63.240.400 TL</span>
+                        </div>
+                        <div class="p-4 bg-dark/30">
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                (Danışmanlık/Lisans: 4.300.000 TL + Risk Payı: 4.800.000 TL dahildir)
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Chart -->
+                <div class="bg-card border border-gray-800 rounded-xl p-8 relative" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-bl-full blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-green-500 opacity-10 rounded-tr-full blur-2xl"></div>
+                    
+                    <h3 class="text-center font-bold text-white mb-6">Bütçe Dağılımı</h3>
+                    <div class="relative h-[300px] w-full flex items-center justify-center">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-800">
+                        <p class="text-sm text-gray-400 italic">
+                            "Bu tutar (~1.38M USD), On-Premise olacağı için bulut kullanım ücreti doğurmayacak, dışa bağımlılığı sıfırlayacak ve milyonlarca liralık zaman/operasyon tasarrufu sağlayacaktır."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-fingerprint text-accent text-2xl"></i>
+                <span class="text-2xl font-bold text-white tracking-wider">KAYRA<span class="text-accent">.</span></span>
+            </div>
+            <p class="text-gray-500 text-sm">Adli Tıp Kurumu - Korelasyon ve Adli Yapay Zeka Risk Analizi Sistemi Sunumu</p>
+            <p class="text-gray-600 text-xs mt-2">&copy; 2024 Tüm Hakları Gizlidir.</p>
+        </div>
+    </footer>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
